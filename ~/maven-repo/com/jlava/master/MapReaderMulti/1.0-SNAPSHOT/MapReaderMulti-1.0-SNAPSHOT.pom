@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.jlava.master</groupId>
+  <artifactId>MapReaderMulti</artifactId>
+  <packaging>pom</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <name>MapReaderMulti</name>
+  <url>http://maven.apache.org</url>
+	
+  <modules>
+    <module>Model</module>
+    <module>Service</module>
+    <module>App</module>
+  </modules>
+	
+  <properties>
+    <mod.app>com.jlava.app</mod.app>
+    <mod.service>com.jlava.service</mod.service>
+    <mod.model>com.jlava.model</mod.model>
+  </properties>
+	
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+			  <groupId>junit</groupId>
+			  <artifactId>junit</artifactId>
+			  <version>4.11</version>
+			  <scope>test</scope>
+			</dependency>
+			
+			<dependency>
+				<groupId>${mod.service}</groupId>
+				<artifactId>Service</artifactId>
+				<version>1.0-SNAPSHOT</version>
+				<scope>compile</scope>
+			</dependency>
+			
+			<dependency>
+				<groupId>${mod.model}</groupId>
+				<artifactId>Model</artifactId>
+				<version>1.0-SNAPSHOT</version>
+				<scope>compile</scope>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-lang3</artifactId>
+				<version>3.6</version>
+			</dependency>
+		</dependencies>
+		
+	</dependencyManagement>
+	
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+    </dependency>
+  </dependencies>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	
+</project>
